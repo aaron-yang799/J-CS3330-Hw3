@@ -1,2 +1,1 @@
-# J-Homework_3
-CS_3330 Homework 3
+#Homework 3 - CMP_SCI 3330 SP24
