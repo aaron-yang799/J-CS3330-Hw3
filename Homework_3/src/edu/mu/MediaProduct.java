@@ -1,5 +1,7 @@
 package edu.mu;
 
+import java.util.Objects;
+
 public class MediaProduct {
 	protected String title;
 	protected double price;
@@ -62,13 +64,30 @@ public class MediaProduct {
 	public String toString() {
 		return "MediaProduct [title=" + title + ", price=" + price + ", year=" + year + ", genre=" + genre + "]";
 	}
-	
-	public boolean equals(MediaProduct obj) {
-        if(this.title == obj.getTitle() && this.genre == obj.getGenre() && this.price == obj.getPrice() && this.year == obj.getYear()) {
-            return true;
-        }
-        return false;
-    }
-	
+
+//	public boolean equals(MediaProduct obj) {
+//        if(this.title == obj.getTitle() && this.genre == obj.getGenre() && this.price == obj.getPrice() && this.year == obj.getYear()) {
+//            return true;
+//        }
+//        return false;
+//    }
+
+//	@Override
+//	public int hashCode() {
+//		return Objects.hash(genre, price, title, year);
+//	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+//		if (getClass() != obj.getClass())
+//			return false;
+		MediaProduct other = (MediaProduct) obj;
+		return genre == other.genre && Double.doubleToLongBits(price) == Double.doubleToLongBits(other.price)
+				&& Objects.equals(title, other.title) && year == other.year;
+	}
 	
 }

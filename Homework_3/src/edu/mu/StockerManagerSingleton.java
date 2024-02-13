@@ -67,10 +67,12 @@ public class StockerManagerSingleton {
 	public boolean updateItemPrice(MediaProduct product, double newPrice) {
 		boolean flag = false;
 		
+		MediaProduct temp = new MediaProduct(product);
+				
 		for(int i = 0; i < products.size(); i++)
 		{
 			MediaProduct currentProduct = products.get(i);
-			if(currentProduct.equals(product)) {
+			if(currentProduct.equals(temp)) {
 				currentProduct.setPrice(newPrice);
 				flag = true;
 			}
@@ -78,6 +80,14 @@ public class StockerManagerSingleton {
 		return flag;
 	}
 
+	public boolean addItem(MediaProduct product) {
+		if(product == null) {
+			return false;
+		}
+		products.add(product);
+		return true;
+		
+	}
 	
 	public boolean removeItem(MediaProduct product) {
         for(int i = 0; i < products.size(); ++i) {
