@@ -59,6 +59,7 @@ public class Main {
 			System.out.println(listOfProducts.get(i).getClass());
 		}
 		
+		instance.saveStock();
 
 	}
 
