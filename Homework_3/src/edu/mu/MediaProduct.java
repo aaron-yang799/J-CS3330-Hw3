@@ -63,6 +63,12 @@ public class MediaProduct {
 		return "MediaProduct [title=" + title + ", price=" + price + ", year=" + year + ", genre=" + genre + "]";
 	}
 	
+	public boolean equals(MediaProduct obj) {
+        if(this.title == obj.getTitle() && this.genre == obj.getGenre() && this.price == obj.getPrice() && this.year == obj.getYear()) {
+            return true;
+        }
+        return false;
+    }
 	
 	
 }
