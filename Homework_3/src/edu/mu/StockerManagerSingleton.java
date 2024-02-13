@@ -102,16 +102,12 @@ public class StockerManagerSingleton {
     }
 	
 	public boolean saveStock() {
-		ArrayList<MediaProduct> updatedProducts = StockerManagerSingleton.getProducts();
-		if(updatedProducts == null)
-			return false;
-		
 		try (FileWriter writer = new FileWriter(filePath)) {
 			
 			writer.write("Type,Title,Price,Year,Genre\n");
 			String Type = "";
-			for(int i = 0; i < updatedProducts.size(); i++) {
-				switch (updatedProducts.get(i).getClass().getSimpleName()) {
+			for(int i = 0; i < products.size(); i++) {
+				switch (products.get(i).getClass().getSimpleName()) {
 	
 				case "CDRecordProduct":
 					Type = "CD";
@@ -130,10 +126,10 @@ public class StockerManagerSingleton {
 				}
 				
 				writer.write(Type + "," + 
-							 String.valueOf(updatedProducts.get(i).getTitle()) + "," +
-							 String.valueOf(updatedProducts.get(i).getPrice()) + "," +
-							 String.valueOf(updatedProducts.get(i).getYear()) + "," +
-							 String.valueOf(updatedProducts.get(i).getGenre()) + ",\n");
+							 products.get(i).getTitle() + "," +
+							 products.get(i).getPrice() + "," +
+							 products.get(i).getYear() + "," +
+							 products.get(i).getGenre() + "\n");
 			}
 			writer.close();
 			return true;
