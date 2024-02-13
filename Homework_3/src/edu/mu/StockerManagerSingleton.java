@@ -1,6 +1,7 @@
 package edu.mu;
 
 import java.io.FileInputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -80,6 +81,7 @@ public class StockerManagerSingleton {
 		return flag;
 	}
 
+	
 	public boolean addItem(MediaProduct product) {
 		if(product == null) {
 			return false;
@@ -99,6 +101,47 @@ public class StockerManagerSingleton {
         return false;
     }
 	
+	public boolean saveStock() {
+		ArrayList<MediaProduct> updatedProducts = StockerManagerSingleton.getProducts();
+		if(updatedProducts == null)
+			return false;
+		
+		try (FileWriter writer = new FileWriter("files/inventoryTest.csv")) {
+			
+			writer.write("Type,Title,Price,Year,Genre\n");
+			String Type = "";
+			for(int i = 0; i < updatedProducts.size(); i++) {
+				writer.write(updatedProducts.get(i).getClass().getSimpleName() + "\n");
+				switch (updatedProducts.get(i).getClass().getSimpleName()) {
 	
+				case "CDRecordProduct":
+					Type = "CD";
+					break;
+				
+				case "VinylRecordProduct":
+					Type = "Vinyl";
+					break;
+				
+				case "TapeRecordProduct":
+					Type = "Tape";
+					break;
+				
+				default:
+					break;
+				}
+				
+				writer.write(Type + "," + 
+							 String.valueOf(updatedProducts.get(i).getTitle()) + "," +
+							 String.valueOf(updatedProducts.get(i).getPrice()) + "," +
+							 String.valueOf(updatedProducts.get(i).getYear()) + "," +
+							 String.valueOf(updatedProducts.get(i).getGenre()) + ",\n");
+			}
+			writer.close();
+			return true;
+		} catch (IOException e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
 }
 
