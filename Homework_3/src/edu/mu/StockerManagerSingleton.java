@@ -9,7 +9,7 @@ public class StockerManagerSingleton {
 	
 	private static StockerManagerSingleton instance = null;
 	private final static String filePath = "files/inventory.csv";
-	private static ArrayList<MediaProduct> products;
+	public static ArrayList<MediaProduct> products;
 	
 	private StockerManagerSingleton() {
 		products = new ArrayList<MediaProduct>();
@@ -29,7 +29,21 @@ public class StockerManagerSingleton {
 			Scanner scanner = new Scanner(inputStream);
 			scanner.nextLine();
 			while(scanner.hasNextLine()) {
-				
+				String[] fields = scanner.nextLine().split(",");
+				switch(fields[0]) {
+					case "CD": 
+						products.add(new CDRecordProduct(new MediaProduct(fields[1], Double.parseDouble(fields[2]), Integer.parseInt(fields[3]), Genre.valueOf(fields[4]))));
+						break;
+					case "Vinyl":
+						products.add(new VinylRecordProduct(new MediaProduct(fields[1], Double.parseDouble(fields[2]), Integer.parseInt(fields[3]), Genre.valueOf(fields[4]))));
+						break;
+					case "Tape":
+						products.add(new TapeRecordProduct(new MediaProduct(fields[1], Double.parseDouble(fields[2]), Integer.parseInt(fields[3]), Genre.valueOf(fields[4]))));
+						break;
+					default:
+						products.add(new MediaProduct(fields[1], Double.parseDouble(fields[2]), Integer.parseInt(fields[3]), Genre.valueOf(fields[4])));
+						break;
+				}
 			}
 			scanner.close();
 			inputStream.close();
