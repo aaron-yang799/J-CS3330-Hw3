@@ -64,6 +64,16 @@ public class StockerManagerSingleton {
 		StockerManagerSingleton.products = products;
 	}
 	
+	public boolean removeItem(MediaProduct product) {
+        for(int i = 0; i < products.size(); ++i) {
+            if(products.get(i).equals(product)){
+                products.remove(i);
+                return true;
+            }
+        }
+        return false;
+    }
+	
 	
 }
 

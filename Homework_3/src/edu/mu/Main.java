@@ -19,6 +19,16 @@ public class Main {
 
 		}
 		
+		System.out.println("\n\n\n\n\n\n\n\n");
+		
+		instance.removeItem(listOfProducts.get(3));
+		
+		for(int i = 0; i < listOfProducts.size(); i++)
+		{
+			System.out.println(listOfProducts.get(i));
+			System.out.println(listOfProducts.get(i).getClass());
+
+		}
 	}
 
 }
