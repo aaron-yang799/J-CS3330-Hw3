@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Main {
 
 	public static void main(String[] args) {
+		
 		// TODO Auto-generated method stub
 		System.out.println("Yippee!");
 		StockerManagerSingleton instance = StockerManagerSingleton.getInstance();
@@ -21,6 +22,7 @@ public class Main {
 
 		}
 		
+		instance.saveStock();
 		
 		instance.removeItem(listOfProducts.get(1));
 		
@@ -59,8 +61,6 @@ public class Main {
 			System.out.println(listOfProducts.get(i).getClass());
 		}
 		
-		instance.saveStock();
-
 	}
 
 }
