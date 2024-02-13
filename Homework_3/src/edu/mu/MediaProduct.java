@@ -6,11 +6,15 @@ public class MediaProduct {
 	protected int year;
 	protected Genre genre;
 	
-	public MediaProduct(MediaProduct mediaProduct) {
-		this.title = mediaProduct.title;
-		this.price = mediaProduct.price;
-		this.year = mediaProduct.year;
-		this.genre = mediaProduct.genre;
+	public MediaProduct(MediaProduct product) {
+		this.title = product.title;
+		this.price = product.price;
+		this.year = product.year;
+		this.genre = product.genre;
+	}
+	
+	public MediaProduct() {
+		
 	}
 
 	public String getTitle() {
