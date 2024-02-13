@@ -13,6 +13,15 @@ public class MediaProduct {
 		this.genre = product.genre;
 	}
 	
+	public MediaProduct(String title, double price, int year, Genre genre) {
+		this.title = title;
+		this.price = price;
+		this.year = year;
+		this.genre = genre;
+	}
+
+
+
 	public MediaProduct() {
 		
 	}
