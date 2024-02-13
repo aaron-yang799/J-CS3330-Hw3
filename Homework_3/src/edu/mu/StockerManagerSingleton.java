@@ -106,12 +106,11 @@ public class StockerManagerSingleton {
 		if(updatedProducts == null)
 			return false;
 		
-		try (FileWriter writer = new FileWriter("files/inventoryTest.csv")) {
+		try (FileWriter writer = new FileWriter(filePath)) {
 			
 			writer.write("Type,Title,Price,Year,Genre\n");
 			String Type = "";
 			for(int i = 0; i < updatedProducts.size(); i++) {
-				writer.write(updatedProducts.get(i).getClass().getSimpleName() + "\n");
 				switch (updatedProducts.get(i).getClass().getSimpleName()) {
 	
 				case "CDRecordProduct":
