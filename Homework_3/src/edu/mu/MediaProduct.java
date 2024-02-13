@@ -57,6 +57,12 @@ public class MediaProduct {
 	public void setGenre(Genre genre) {
 		this.genre = genre;
 	}
+
+	@Override
+	public String toString() {
+		return "MediaProduct [title=" + title + ", price=" + price + ", year=" + year + ", genre=" + genre + "]";
+	}
+	
 	
 	
 }

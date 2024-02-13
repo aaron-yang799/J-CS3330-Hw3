@@ -9,7 +9,7 @@ public class StockerManagerSingleton {
 	
 	private static StockerManagerSingleton instance = null;
 	private final static String filePath = "files/inventory.csv";
-	public static ArrayList<MediaProduct> products;
+	private static ArrayList<MediaProduct> products;
 	
 	private StockerManagerSingleton() {
 		products = new ArrayList<MediaProduct>();
@@ -55,5 +55,15 @@ public class StockerManagerSingleton {
 		}
 			
 	}
+
+	public static ArrayList<MediaProduct> getProducts() {
+		return products;
+	}
+
+	public static void setProducts(ArrayList<MediaProduct> products) {
+		StockerManagerSingleton.products = products;
+	}
+	
+	
 }
 
