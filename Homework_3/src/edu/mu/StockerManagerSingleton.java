@@ -138,5 +138,79 @@ public class StockerManagerSingleton {
 			return false;
 		}
 	}
+	
+	
+	public void printListOfMediaProduct(ArrayList<MediaProduct>productList)
+	{
+		for(int i = 0; i < productList.size(); i++)
+		{
+			System.out.println(productList.get(i));
+		}
+	}
+	
+	public ArrayList<VinylRecordProduct>getVinylRecordList(ArrayList<MediaProduct> productList)
+	{
+		VinylRecordProduct class_compare = new VinylRecordProduct(productList.get(0));
+		//VinylRecordProduct temp = new VinylRecordProduct();
+		ArrayList<VinylRecordProduct> vpr = new ArrayList<VinylRecordProduct>();
+		
+		for(int i = 0; i < productList.size(); i++)
+		{
+
+
+			//System.out.println("ProductList" + (productList.get(i)).getClass());
+			//System.out.println("NewJoin" + (new VinylRecordProduct(productList.get(i))).getClass());
+			if((class_compare.getClass().equals((productList.get(i)).getClass())))
+			{
+				vpr.add(VinylRecordProduct.class.cast(productList.get(i)));
+				
+			}
+		}
+		return vpr;
+		
+	}
+	
+	public ArrayList<CDRecordProduct>getCDRecordsList(ArrayList<MediaProduct> productList)
+	{
+		CDRecordProduct class_compare = new CDRecordProduct(productList.get(0));
+		//VinylRecordProduct temp = new VinylRecordProduct();
+		ArrayList<CDRecordProduct> vpr = new ArrayList<CDRecordProduct>();
+		
+		for(int i = 0; i < productList.size(); i++)
+		{
+
+
+			//System.out.println("ProductList" + (productList.get(i)).getClass());
+			//System.out.println("NewJoin" + (new VinylRecordProduct(productList.get(i))).getClass());
+			if((class_compare.getClass().equals((productList.get(i)).getClass())))
+			{
+				vpr.add(CDRecordProduct.class.cast(productList.get(i)));
+				
+			}
+		}
+		return vpr;
+	}
+	
+	
+	public ArrayList<TapeRecordProduct>getTapeRecordList(ArrayList<MediaProduct> productList)
+	{
+		TapeRecordProduct class_compare = new TapeRecordProduct(productList.get(0));
+		//VinylRecordProduct temp = new VinylRecordProduct();
+		ArrayList<TapeRecordProduct> vpr = new ArrayList<TapeRecordProduct>();
+		
+		for(int i = 0; i < productList.size(); i++)
+		{
+
+
+			//System.out.println("ProductList" + (productList.get(i)).getClass());
+			//System.out.println("NewJoin" + (new VinylRecordProduct(productList.get(i))).getClass());
+			if((class_compare.getClass().equals((productList.get(i)).getClass())))
+			{
+				vpr.add(TapeRecordProduct.class.cast(productList.get(i)));
+				
+			}
+		}
+		return vpr;
+	}
 }
 
