@@ -2,6 +2,12 @@
 
 This Java project is a media product management system. It utilizes a singleton design pattern to create a StockerManager class that is responsible for reading and writing to the inventory files, as well as updating prices of items and retrieving inventory data.
 
+### Group Members
+- Aaron yang
+- Zach Snyder
+- Viet Nguyen
+- Chetan Vanteddu
+
 ### Usage
 
 This project was developed using Java Dev Kit version 21. In order to run this code you will need to have JDK 21 selected as you Java Runtime Environment within your IDE. 
