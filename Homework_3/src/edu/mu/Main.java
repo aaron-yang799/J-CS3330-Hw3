@@ -72,7 +72,7 @@ public class Main {
 			
 			System.out.println(vpr.get(i));
 			System.out.println((vpr.get(i)).getClass());
-			System.out.println("\n");
+//			System.out.println("\n");
 		}
 		System.out.println("Total number of CDRecords:" + vpr.size());
 		
@@ -88,7 +88,7 @@ public class Main {
 			
 			System.out.println(cdp.get(i));
 			System.out.println((cdp.get(i)).getClass());
-			System.out.println("\n");
+//			System.out.println("\n");
 		}
 		System.out.println("Total number of CDRecords:" + cdp.size());
 		
@@ -104,7 +104,7 @@ public class Main {
 			
 			System.out.println(trp.get(i));
 			System.out.println((trp.get(i)).getClass());
-			System.out.println("\n");
+//			System.out.println("\n");
 		}
 		System.out.println("Total number of TapeRecords:" + trp.size());
 
