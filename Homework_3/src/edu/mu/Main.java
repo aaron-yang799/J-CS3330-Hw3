@@ -109,7 +109,11 @@ public class Main {
 		System.out.println("Total number of TapeRecords:" + trp.size());
 
 		
-
+		System.out.println("\n\nTapes below $16:");
+		ArrayList<MediaProduct> budget = new ArrayList<>();
+		budget = instance.getMediaProductBelowPrice(16);
+		for(int i = 0; i < budget.size(); i++)
+			System.out.println(budget.get(i));
 
 		
 	}
