@@ -61,6 +61,59 @@ public class Main {
 			System.out.println(listOfProducts.get(i).getClass());
 		}
 		
+		System.out.println("\n\n\n\n\n\n");
+		ArrayList<VinylRecordProduct> vpr = new ArrayList<VinylRecordProduct>();
+		System.out.println("\nList of VinylRecords only: \n");
+		vpr = instance.getVinylRecordList(listOfProducts);
+		
+		for(int i = 0; i < vpr.size(); i++)
+		{
+			
+			
+			System.out.println(vpr.get(i));
+			System.out.println((vpr.get(i)).getClass());
+			System.out.println("\n");
+		}
+		System.out.println("Total number of CDRecords:" + vpr.size());
+		
+		
+		System.out.println("\n\n\n\n\n\n");
+		ArrayList<CDRecordProduct> cdp = new ArrayList<CDRecordProduct>();
+		System.out.println("\nList of CDRecords only: \n");
+		cdp = instance.getCDRecordsList(listOfProducts);
+		
+		for(int i = 0; i < cdp.size(); i++)
+		{
+			
+			
+			System.out.println(cdp.get(i));
+			System.out.println((cdp.get(i)).getClass());
+			System.out.println("\n");
+		}
+		System.out.println("Total number of CDRecords:" + cdp.size());
+		
+		
+		System.out.println("\n\n\n\n\n\n");
+		ArrayList<TapeRecordProduct> trp = new ArrayList<TapeRecordProduct>();
+		System.out.println("\nList of TapeRecords only: \n");
+		trp = instance.getTapeRecordList(listOfProducts);
+		
+		for(int i = 0; i < trp.size(); i++)
+		{
+			
+			
+			System.out.println(trp.get(i));
+			System.out.println((trp.get(i)).getClass());
+			System.out.println("\n");
+		}
+		System.out.println("Total number of TapeRecords:" + trp.size());
+
+		
+
+
+		
 	}
+	
+	
 
 }
