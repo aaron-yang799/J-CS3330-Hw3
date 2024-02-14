@@ -212,5 +212,14 @@ public class StockerManagerSingleton {
 		}
 		return vpr;
 	}
+	
+	public ArrayList<MediaProduct> getMediaProductBelowPrice(int maxPrice) {
+		ArrayList<MediaProduct> budgetList = new ArrayList<>();
+		for(int i = 0; i < products.size(); ++i) {
+			if(products.get(i).getPrice() < maxPrice) 
+				budgetList.add(products.get(i));
+		}
+		return budgetList;
+	}
 }
 
